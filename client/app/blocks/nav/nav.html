@@ -1,0 +1,725 @@
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span>Navigation</span>
+  </li>
+  <!--自定义-->
+  <li has-permission="accept">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="fa fa-file-excel-o icon text-primary-lt"></i>
+      <span class="font-bold">受理</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>受理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="acceptImport">
+        <a ui-sref="tpa.front">
+          <span>受理导入</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="acceptAudit">
+        <a ui-sref="tpa.note">
+          <span>受理审核</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="acceptPrint">
+        <a ui-sref="app.accept.print">
+          <span>受理打印</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- 扫描 -->
+  <li has-permission="scan">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-print icon text-info-lt"></i>
+      <span class="font-bold">扫描</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>扫描</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="scanExecute">
+        <a ui-sref="app.scan.execute">
+          <span>扫描</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="scanAudit">
+        <a ui-sref="app.scan.audit">
+          <span>扫描审核</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!--录入-->
+  <!--<li has-permission="entering">-->
+  <!--<a href class="auto">-->
+  <!--<span class="pull-right text-muted">-->
+  <!--<i class="fa fa-fw fa-angle-right text"></i>-->
+  <!--<i class="fa fa-fw fa-angle-down text-active"></i>-->
+  <!--</span>-->
+  <!--<i class="fa fa-pencil-square-o icon text-primary-lt"></i>-->
+  <!--<span class="font-bold">录入</span>-->
+  <!--</a>-->
+  <!--<ul class="nav nav-sub dk">-->
+  <!--<li class="nav-sub-header">-->
+  <!--<a href>-->
+  <!--<span>录入</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="entering">-->
+  <!--<a ui-sref="app.entering.machine">-->
+  <!--<span>无纸录入</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="enterDoc">-->
+  <!--<a ui-sref="app.entering.documentation">-->
+  <!--<span>有纸录入</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="enteringAudit">-->
+  <!--<a ui-sref="app.entering.machine-audit">-->
+  <!--<span>无纸录入审核</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="enterDocReview">-->
+  <!--<a ui-sref="app.entering.documentation-audit">-->
+  <!--<span>有纸录入审核</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--</ul>-->
+  <!--</li>-->
+  <!--&lt;!&ndash;理赔&ndash;&gt;-->
+  <!--<li has-permission="claim">-->
+  <!--<a href class="auto">-->
+  <!--<span class="pull-right text-muted">-->
+  <!--<i class="fa fa-fw fa-angle-right text"></i>-->
+  <!--<i class="fa fa-fw fa-angle-down text-active"></i>-->
+  <!--</span>-->
+  <!--<i class="fa fa-briefcase icon text-info-lt"></i>-->
+  <!--<span class="font-bold">理赔</span>-->
+  <!--</a>-->
+  <!--<ul class="nav nav-sub dk">-->
+  <!--<li class="nav-sub-header">-->
+  <!--<a href>-->
+  <!--<span>理赔</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="claimReview">-->
+  <!--<a ui-sref="app.claim.claim-audit">-->
+  <!--<span>理赔审核</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--</ul>-->
+  <!--</li>-->
+  <!--<li has-permission="entering">-->
+  <!--<a href class="auto">-->
+  <!--<span class="pull-right text-muted">-->
+  <!--<i class="fa fa-fw fa-angle-right text"></i>-->
+  <!--<i class="fa fa-fw fa-angle-down text-active"></i>-->
+  <!--</span>-->
+  <!--<i class="fa fa-pencil-square-o icon text-primary-lt"></i>-->
+  <!--<span class="font-bold">录入</span>-->
+  <!--</a>-->
+  <!--<ul class="nav nav-sub dk">-->
+  <!--<li class="nav-sub-header">-->
+  <!--<a href>-->
+  <!--<span>录入</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="entering">-->
+  <!--<a ui-sref="app.entering.machine">-->
+  <!--<span>无纸录入</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="enterDoc">-->
+  <!--<a ui-sref="app.entering.documentation">-->
+  <!--<span>有纸录入</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="enteringAudit">-->
+  <!--<a ui-sref="app.entering.machine-audit">-->
+  <!--<span>无纸录入审核</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="enterDocReview">-->
+  <!--<a ui-sref="app.entering.documentation-audit">-->
+  <!--<span>有纸录入审核</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--</ul>-->
+  <!--</li>-->
+  <!--&lt;!&ndash;理赔&ndash;&gt;-->
+  <!--<li has-permission="claim">-->
+  <!--<a href class="auto">-->
+  <!--<span class="pull-right text-muted">-->
+  <!--<i class="fa fa-fw fa-angle-right text"></i>-->
+  <!--<i class="fa fa-fw fa-angle-down text-active"></i>-->
+  <!--</span>-->
+  <!--<i class="fa fa-briefcase icon text-info-lt"></i>-->
+  <!--<span class="font-bold">理赔</span>-->
+  <!--</a>-->
+  <!--<ul class="nav nav-sub dk">-->
+  <!--<li class="nav-sub-header">-->
+  <!--<a href>-->
+  <!--<span>理赔</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--<li ui-sref-active="active" has-permission="claimReview">-->
+  <!--<a ui-sref="app.claim.claim-audit">-->
+  <!--<span>理赔审核</span>-->
+  <!--</a>-->
+  <!--</li>-->
+  <!--</ul>-->
+  <!--</li>-->
+
+  <li has-permission="entering">
+    <a href class="auto">
+  <span class="pull-right text-muted">
+  <i class="fa fa-fw fa-angle-right text"></i>
+  <i class="fa fa-fw fa-angle-down text-active"></i>
+  </span>
+      <i class="fa fa-pencil-square-o icon text-primary-lt"></i>
+      <span class="font-bold">录入</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>录入</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="entering">
+        <a ui-sref="app.entering.machine">
+          <span>录入</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="enteringAudit">
+        <a ui-sref="app.entering.machine-audit">
+          <span>校验</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!--理赔-->
+  <li has-permission="claim">
+    <a href class="auto">
+  <span class="pull-right text-muted">
+  <i class="fa fa-fw fa-angle-right text"></i>
+  <i class="fa fa-fw fa-angle-down text-active"></i>
+  </span>
+      <i class="fa fa-briefcase icon text-info-lt"></i>
+      <span class="font-bold">理赔</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>理赔</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="claimReview">
+        <a ui-sref="app.claim.claim-audit">
+          <span>理赔审核</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!--异常-->
+  <li has-permission="exception">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="fa fa-bell icon text-primary-dker"></i>
+      <span class="font-bold">异常</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>异常</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" has-permission="exception">
+        <a ui-sref="app.exception.handling">
+          <span>异常处理</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- 权限管理 -->
+  <li has-permission="manageClient">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="icon-users icon text-info"></i>
+      <span class="font-bold">权限管理</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>权限管理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.client">
+          <span>用户管理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.group">
+          <span>用户组管理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.role">
+          <span>角色管理</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+
+  <!--监控-->
+  <li has-permission="monitoring">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+      </span>
+      <i class="glyphicon glyphicon-cog icon text-primary-lt"></i>
+      <span class="font-bold">监控</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>监控</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.monitoring">
+          <span>监控管理</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!--签收-->
+  <li has-permission="signature">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+      </span>
+      <i class="fa icon-book-open icon text-info"></i>
+      <span class="font-bold">签收</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>签收</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.signature">
+          <span>签收管理</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+
+  <!-- /自定义 -->
+  <!--ui-->
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold">Dashboard</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.dashboard-v1">
+          <span>Dashboard v1</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.dashboard-v2">
+          <b class="label bg-info pull-right">N</b>
+          <span>Dashboard v2</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.calendar">
+      <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+      <span class="font-bold">Calendar</span>
+    </a>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.mail.list">
+      <b class="badge bg-info pull-right">9</b>
+      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+      <span class="font-bold">Email</span>
+    </a>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span class="font-bold">Apps</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Apps</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="apps.note">
+          <span>Note</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="apps.contact">
+          <span>Contacts</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.weather">
+          <span>Weather</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="line dk"></li>
+
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span>Components</span>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <b class="badge bg-info pull-right">3</b>
+      <i class="glyphicon glyphicon-th"></i>
+      <span>Layout</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Layout</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="layout.app">
+          <span>Application</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="layout.fullwidth">
+          <span>Full width</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="layout.mobile">
+          <span>Mobile</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ng-class="{active:$state.includes('app.ui')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <span>UI Kits</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>UI Kits</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.buttons">
+          <span >Buttons</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.icons">
+          <b class="badge bg-info pull-right">3</b>
+          <span>Icons</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.grid">
+          <span>Grid</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.widgets">
+          <b class="badge bg-success pull-right">13</b>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.bootstrap">
+          <b class="badge bg-primary pull-right">16</b>
+          <span>Bootstrap</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.sortable">
+          <span>Sortable</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.portlet">
+          <span>Portlet</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.timeline">
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.tree">
+          <span>Tree</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.toaster">
+          <span>Toaster</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.jvectormap">
+          <span>Vector Map</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.ui.googlemap">
+          <span>Google Map</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ng-class="{active:$state.includes('app.table')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <b class="label bg-primary pull-right">2</b>
+      <i class="glyphicon glyphicon-list"></i>
+      <span>Table</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Table</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.table.static">
+          <span>Table static</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.table.datatable">
+          <span>Datatable</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.table.footable">
+          <span>Footable</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.table.grid">
+          <span>ngGrid</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ng-class="{active:$state.includes('app.form')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-edit"></i>
+      <span>Form</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Form</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.elements">
+          <span>Form elements</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.validation">
+          <span>Form validation</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.wizard">
+          <span>Form wizard</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.fileupload">
+          <span>File upload</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.imagecrop">
+          <span>Image crop</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.select">
+          <span>Select</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.slider">
+          <span>Slider</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.editor">
+          <span>Editor</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.chart">
+      <i class="glyphicon glyphicon-signal"></i>
+      <span>Chart</span>
+    </a>
+  </li>
+  <li ng-class="{active:$state.includes('app.page')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-file icon"></i>
+      <span>Pages</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>Pages</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.page.profile">
+          <span>Profile</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.page.post">
+          <span>Post</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.page.search">
+          <span>Search</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.page.invoice">
+          <span>Invoice</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.page.price">
+          <span>Price</span>
+        </a>
+      </li>
+      <li>
+        <a ui-sref="lockme">
+          <span>Lock screen</span>
+        </a>
+      </li>
+      <li>
+        <a ui-sref="access.signin">
+          <span>Signin</span>
+        </a>
+      </li>
+      <li>
+        <a ui-sref="access.signup">
+          <span>Signup</span>
+        </a>
+      </li>
+      <li>
+        <a ui-sref="access.forgotpwd">
+          <span>Forgot password</span>
+        </a>
+      </li>
+      <li>
+        <a ui-sref="access.404">
+          <span>404</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="line dk hidden-folded"></li>
+
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span>Your Stuff</span>
+  </li>
+  <li>
+    <a ui-sref="app.page.profile">
+      <i class="icon-user icon text-success-lter"></i>
+      <b class="badge bg-success pull-right">30%</b>
+      <span>Profile</span>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="app.docs">
+      <i class="icon-question icon"></i>
+      <span>Documents</span>
+    </a>
+  </li>
+</ul>
+<!-- / list -->
