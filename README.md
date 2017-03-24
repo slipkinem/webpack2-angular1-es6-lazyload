@@ -2,7 +2,7 @@
 
 ### 注意：
   1. 使用的UI样式并不是开源的
-  2. 项目改变了NG6-starter配置
+  2. 项目改变了[NG6-starter](https://github.com/AngularClass/NG6-starter)配置
       1. 升级了依赖包括webpack之类
       2. 修改了babel的配置及webpack的配置
       3. 去掉了不需要的东西
