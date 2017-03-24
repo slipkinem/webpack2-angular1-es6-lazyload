@@ -97,7 +97,7 @@ gulp.task('serve', () => {
 
   var compiler = webpack(config);
 
-  serve({
+  serve({  // browser sync的配置
     port: process.env.PORT || 3000,
     open: false,
     server: {baseDir: root},
@@ -118,24 +118,24 @@ gulp.task('serve', () => {
 
 gulp.task('watch', ['serve']);
 
-gulp.task('component', () => {
-  const cap = (val) => {
-    return val.charAt(0).toUpperCase() + val.slice(1);
-  };
-  const name = yargs.argv.name;
-  const parentPath = yargs.argv.parent || '';
-  const destPath = path.join(resolveToComponents(), parentPath, name);
-
-  return gulp.src(paths.blankTemplates)
-    .pipe(template({
-      name: name,
-      upCaseName: cap(name)
-    }))
-    .pipe(rename((path) => {
-      path.basename = path.basename.replace('temp', name);
-    }))
-    .pipe(gulp.dest(destPath));
-});
+// gulp.task('component', () => {
+//   const cap = (val) => {
+//     return val.charAt(0).toUpperCase() + val.slice(1);
+//   };
+//   const name = yargs.argv.name;
+//   const parentPath = yargs.argv.parent || '';
+//   const destPath = path.join(resolveToComponents(), parentPath, name);
+//
+//   return gulp.src(paths.blankTemplates)
+//     .pipe(template({
+//       name: name,
+//       upCaseName: cap(name)
+//     }))
+//     .pipe(rename((path) => {
+//       path.basename = path.basename.replace('temp', name);
+//     }))
+//     .pipe(gulp.dest(destPath));
+// });
 
 gulp.task('clean', (cb) => {
   del([paths.dest]).then(function (paths) {

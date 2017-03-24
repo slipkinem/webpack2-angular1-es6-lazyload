@@ -5,13 +5,13 @@
 import angular from 'angular'
 
 class FrontController {
-
-  constructor($rootScope, $translate, $window) {
+  constructor($translate, $window) {
+    'ngInject'
     this.$translate = $translate
     this.$window = $window
     // config
     this.app = {
-      name: '普康TPA',
+      name: 'angular',
       version: '1.3.3',
       // for chart colors
       color: {

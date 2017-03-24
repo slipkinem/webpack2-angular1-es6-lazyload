@@ -4,7 +4,7 @@ import uiBootstrap from 'angular-ui-bootstrap'
 import angularAnimate from 'angular-animate'
 import ocLazyLoad from 'oclazyload'
 
-import AppRouter from '../tpa'
+import AppRouter from '../operation'
 import Block from './blocks/block'
 import Components from './components'
 import AppComponent from './app.component'
@@ -24,7 +24,7 @@ var app = angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $urlRouterProvider.otherwise('/tpa/front')
 
-    $locationProvider.html5Mode(true).hashPrefix('!')
+    $locationProvider.html5Mode(false).hashPrefix('!')
   })
   .config(function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
     'ngInject'
