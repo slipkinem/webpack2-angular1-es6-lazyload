@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path    = require('path')
 var config  = require('./webpack.config')
+let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 config.output = {
   filename: 'js/[name].[hash].js',
@@ -10,9 +11,13 @@ config.output = {
 }
 
 config.plugins = config.plugins.concat([
+  new OptimizeCssAssetsPlugin(),
 
   // Reduces bundles total size
   new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    },
     mangle: {
 
       // You can specify all variables that should not be mangled.
