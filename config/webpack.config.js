@@ -1,12 +1,15 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-
 module.exports = {
-  devtool: 'source-map', // 调试工具
-  entry: {}, // 入口，
+  entry: {
+    app: [
+      'babel-polyfill',
+      './client/app/app.js'
+    ]
+  }, // 入口，
   module: {
     /**
      * 配置loader
@@ -15,7 +18,7 @@ module.exports = {
       // js loader 顺序，由后往前执行数组里面的loader
       {
         test: /\.js$/,
-        exclude: [/app\/lib/, /node_modules/], //不读取
+        exclude: [/app\/lib/, /node_modules/], // 不读取
         use: [
           'ng-annotate-loader',
           'babel-loader',
@@ -77,7 +80,7 @@ module.exports = {
     new webpack.ProvidePlugin({  // 全局依赖
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
+      'window.jQuery': 'jquery'
     }),
     new HtmlWebpackPlugin({   // 读取index并会添加静态资源链接，并打上hash
       template: 'client/index.html',
@@ -95,8 +98,8 @@ module.exports = {
       name: 'vendor',
       filename: 'vendor/vendor.[hash].js',
       minChunks: function (module) {
-        return module.resource && module.resource.indexOf(path.resolve(__dirname, 'client')) === -1;
+        return module.resource && module.resource.indexOf(path.resolve(__dirname, 'client')) === -1
       }
     })
   ]
-};
+}

@@ -3,7 +3,7 @@
  */
 'use strict'
 export default class NoteController {
-  constructor() {
+  constructor () {
     console.log('hehehe')
   }
 }

@@ -4,31 +4,31 @@ export default angular.module('uiNav', [])
     return {
       restrict: 'AC',
       link: function (scope, el) {
-        var _window = $(window),
-          _mb = 768,
-          wrap = $('.app-aside'),
-          next,
-          backdrop = '.dropdown-backdrop'
+        let _window = $(window)
+        let _mb = 768
+        let wrap = $('.app-aside')
+        let next
+        let backdrop = '.dropdown-backdrop'
         // unfolded
         el.on('click', 'a', function (e) {
           next && next.trigger('mouseleave.nav')
-          var _this = $(this)
+          let _this = $(this)
           _this.parent().siblings('.active').toggleClass('active')
           _this.next().is('ul') && _this.parent().toggleClass('active') && e.preventDefault()
           // mobile
-          _this.next().is('ul') || ( ( _window.width() < _mb ) && $('.app-aside').removeClass('show off-screen') )
+          _this.next().is('ul') || ((_window.width() < _mb) && $('.app-aside').removeClass('show off-screen'))
         })
 
         // folded & fixed
         el.on('mouseenter', 'a', function (e) {
           next && next.trigger('mouseleave.nav')
           $('> .nav', wrap).remove()
-          if (!$('.app-aside-fixed.app-aside-folded').length || ( _window.width() < _mb ) || $('.app-aside-dock').length) return
-          var _this = $(e.target)
-            , top
-            , w_h = $(window).height()
-            , offset = 50
-            , min = 150
+          if (!$('.app-aside-fixed.app-aside-folded').length || (_window.width() < _mb) || $('.app-aside-dock').length) return
+          let _this = $(e.target)
+          let top
+          let wh = $(window).height()
+          let offset = 50
+          let min = 150
 
           !_this.is('a') && (_this = _this.closest('a'))
           if (_this.next().is('ul')) {
@@ -40,11 +40,11 @@ export default angular.module('uiNav', [])
           _this.parent().addClass('active')
           top = _this.parent().position().top + offset
           next.css('top', top)
-          if (top + next.height() > w_h) {
+          if (top + next.height() > wh) {
             next.css('bottom', 0)
           }
-          if (top + min > w_h) {
-            next.css('bottom', w_h - top - offset).css('top', 'auto')
+          if (top + min > wh) {
+            next.css('bottom', wh - top - offset).css('top', 'auto')
           }
           next.appendTo(wrap)
 
@@ -55,10 +55,10 @@ export default angular.module('uiNav', [])
             _this.parent().removeClass('active')
           })
 
-          $('.smart').length && $('<div class="dropdown-backdrop"/>').insertAfter('.app-aside').on('click', function (next) {
-            next && next.trigger('mouseleave.nav')
-          })
-
+          $('.smart').length && $('<div class="dropdown-backdrop"/>').insertAfter('.app-aside')
+            .on('click', function (next) {
+              next && next.trigger('mouseleave.nav')
+            })
         })
 
         wrap.on('mouseleave', function () {

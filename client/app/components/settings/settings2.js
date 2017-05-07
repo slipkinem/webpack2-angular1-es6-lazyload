@@ -15,7 +15,7 @@ let settingsModule = angular.module('settings2', [uiRouter])
     $stateProvider
       .state('tpa.front', {
         url: '/front',
-        component: 'settings2',
+        component: 'settings2'
       })
   })
 

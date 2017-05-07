@@ -23,5 +23,4 @@ let AppRouter = angular.module('app.router', [
       })
   })
 
-
 export default AppRouter.name

@@ -1,15 +1,17 @@
 var webpack = require('webpack')
-var path    = require('path')
-var config  = require('./webpack.config')
+var path = require('path')
+var config = require('./webpack.config')
 let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const publicPath = require('./index').prod.publicPath
 
 config.output = {
   filename: 'js/[name].[hash].js',
-  publicPath: '/',
-  path: path.resolve(__dirname, 'dist'),
+  publicPath,
+  path: path.resolve(__dirname, '../dist'),
   chunkFilename: 'js/chunks/[name].chunk.[chunkhash].js'
 }
 
+var CompressionWebpackPlugin = require('compression-webpack-plugin')
 config.plugins = config.plugins.concat([
   new OptimizeCssAssetsPlugin(),
 
@@ -26,7 +28,14 @@ config.plugins = config.plugins.concat([
       // angular global variable, so we should keep it unchanged
       except: ['$super', '$', 'exports', 'require', 'angular']
     }
+  }),
+  new CompressionWebpackPlugin({
+    asset: '[path].gz[query]',
+    algorithm: 'gzip',
+    test: /\.(js|html|css)$/,
+    threshold: 10240,
+    minRatio: 0.8
   })
 ])
 
-module.exports = config;
+module.exports = config

@@ -11,7 +11,6 @@ let noteModule = angular.module('note', [
 ])
 
   .component('note', NoteComponent)
-  
   .name
 
 export default noteModule

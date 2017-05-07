@@ -1,24 +1,15 @@
+extends: standard
 env:
-  browser: true
-  es6: true
-  jquery: true
-  node: true
-extends: 'eslint:recommended'
-exclude: '/dist/'
-parserOptions:
-  sourceType: module
-rules:
-  indent:
-    - error
-    - 2
-  linebreak-style:
-    - error
-    - windows
-  quotes:
-    - error
-    - single
-  semi:
-    - error
-    - never
-  no-console:
-    - 1
+  es6:
+    - true
+  browser:
+    - true
+  node:
+    - true
+  jquery:
+    - true
+  mocha:
+    - true
+plugins:
+  - standard
+  - promise

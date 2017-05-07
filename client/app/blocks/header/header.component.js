@@ -9,7 +9,7 @@ let headerComponent = {
   bindings: {
     setting: '<'
   },
-  template,
+  template
 }
 
 export default headerComponent

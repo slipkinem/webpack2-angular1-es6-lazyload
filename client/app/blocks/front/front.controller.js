@@ -5,7 +5,7 @@
 import angular from 'angular'
 
 class FrontController {
-  constructor($translate, $window) {
+  constructor ($translate, $window) {
     'ngInject'
     this.$translate = $translate
     this.$window = $window
@@ -40,20 +40,19 @@ class FrontController {
     this.lang = {isopen: false}
     this.langs = {en: 'English', de_DE: 'German', it_IT: 'Italian'}
     this.selectLang = this.langs[$translate.proposedLanguage()] || 'English'
-
   }
 
-  $onInit() {
+  $onInit () {
     this.addIESmart(this.$window)
   }
 
-  addIESmart($window) {
+  addIESmart ($window) {
     let isIE = !!navigator.userAgent.match(/MSIE/i)
     isIE && angular.element($window.document.body).addClass('ie')
     this.isSmartDevice($window) && angular.element($window.document.body).addClass('smart')
   }
 
-  setLang(langKey) {
+  setLang (langKey) {
     // set the current lang
     this.selectLang = this.langs[langKey]
     // You can change the language during runtime
@@ -61,14 +60,12 @@ class FrontController {
     this.lang.isopen = !this.lang.isopen
   }
 
-  isSmartDevice($window) {
+  isSmartDevice ($window) {
     // Adapted from http://www.detectmobilebrowsers.com
     var ua = $window['navigator']['userAgent'] || $window['navigator']['vendor'] || $window['opera']
     // Checks for iOs, Android, Blackberry, Opera Mini, and Windows mobile devices
     return (/iPhone|iPod|iPad|Silk|Android|BlackBerry|Opera Mini|IEMobile/).test(ua)
   }
-
 }
-
 
 export default FrontController

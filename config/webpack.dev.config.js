@@ -1,13 +1,14 @@
-var webpack = require('webpack');
-var path    = require('path');
-var config  = require('./webpack.config');
+var webpack = require('webpack')
+var path = require('path')
+var config = require('./webpack.config')
+const publicPath = require('./index').dev.publicPath
 
 config.output = {
   filename: 'js/[name].bundle.js',
-  publicPath: '/',
+  publicPath,
   path: path.resolve(__dirname, 'client'),
-  chunkFilename: "js/chunks/[id].[name].chunk.[chunkhash].js"
-};
+  chunkFilename: 'js/chunks/[id].[name].chunk.[chunkhash].js'
+}
 
 config.plugins = config.plugins.concat([
 
@@ -15,6 +16,6 @@ config.plugins = config.plugins.concat([
   // reloading page after webpack rebuilt modules.
   // It also updates stylesheets and inline assets without page reloading.
   new webpack.HotModuleReplacementPlugin()
-]);
+])
 
-module.exports = config;
+module.exports = config
